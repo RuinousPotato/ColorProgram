@@ -1,2 +1,2 @@
 # ColorProgram
-Prosciutki program do kolorowania przyciskow
+Prosciutki program do zabawy kolorami
