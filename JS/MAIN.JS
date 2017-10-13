@@ -9,6 +9,7 @@ let blue = 'F';
 function begin(){
     create_tanks();
     create_btn('green');
+    create_btn('red');
     create_btn('blue');
     style_btn();
     btn_listener();
@@ -25,7 +26,7 @@ function create_tanks(){
     'padding':'10px'
   });
   $('.color_tank').addClass('animate');
-  content = '<div class="btn_tank"> This is a tank for a button</div>';
+  content = '<div class="btn_tank"> Kliknij w liczbę szesnastkową, by zmienic kolor: </div>';
   $('.tank').append(content);
   $('.btn_tank').css({
     'borderTop':'1px solid #ccc',
@@ -50,15 +51,15 @@ function create_btn(type){
 
 function style_btn(){
   $('.label').css({
-    'text-allign':'center',
-    'background-color':'#222',
+    'text-align':'center',
+    'background-color':'#123',
     'color':'#fff',
     'float':'left',
     'padding':'10px 0px',
     'width':'100%'
   });
   $('.btn').css({
-    'text-allign':'center',
+    'text-align':'center',
     'background-color':'#eee',
     'cursor':'pointer',
     'float':'left',
@@ -66,12 +67,14 @@ function style_btn(){
     'width':(1/16*100)+'%'
   });
 $('.btn').addClass('animate');
+highlight_default();
+
 }
 
 function highlight_default(){
-    $('#btn_g_'+green).addClass('active');
-    $('#btn_r_'+red).addClass('active');
-    $('#btn_b_'+blue).addClass('active');
+    $('#btn_green_'+green).addClass('active');
+    $('#btn_red_'+red).addClass('active');
+    $('#btn_blue_'+blue).addClass('active');
 }
 
 function btn_listener(){
@@ -92,6 +95,7 @@ function btn_listener(){
 
 function change_color(){
   $('.color_tank').css('background-color','#'+red+green+blue);
+  $('.color_tank').css('color','#'+red+green+blue);
 }
 
 function change_to_hex(value){
